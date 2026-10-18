@@ -1,0 +1,322 @@
+/* CA27 — sistema compartido de las cuatro versiones.
+   Fuente de verdad: MEMORIA.md y el PDF de dirección estética.
+
+   Tipo: Neue Haas Grotesk (Display 65 Medium / Text 75 Bold) por local().
+   Si la máquina no la tiene, cae a Schibsted Grotesk 500/700. No hay 900.
+   Firma: el asset casa-abierta-script.webp usado como máscara, así toma el
+   color del texto (cream sobre color, tinta sobre crema). No se escribe
+   la firma con una fuente cursiva ni se usa para otras palabras.
+   Tracking de la lámina (inter. -65): -0.055em en display, -0.065em en mega. */
+
+:root {
+  /* Primarios */
+  --blue: #0648f8;
+  --orange: #e55725;
+  --ink: #0d1517;
+  --cream: #fffaf6;
+  /* Secundarios */
+  --green: #02ca2d;
+  --magenta: #b609b0;
+  --red: #ff2b03;
+  --yellow: #f3f000;
+  /* Del sitio publicado */
+  --sand: #f6ebdc;
+
+  --ink-soft: color-mix(in srgb, var(--ink) 64%, var(--cream));
+  --cream-soft: color-mix(in srgb, var(--cream) 70%, transparent);
+  --line: color-mix(in srgb, currentColor 22%, transparent);
+
+  --display: "Neue Haas Grotesk Display Pro", "NHaasGroteskDSPro-65Md", "Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --text: "Neue Haas Grotesk Text Pro", "NHaasGroteskTXPro-75Bd", "Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ui: Helvetica, "Helvetica Neue", Arial, sans-serif;
+
+  --track: -0.055em;
+  --track-mega: -0.065em;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-io: cubic-bezier(0.65, 0.05, 0, 1);
+  --gut: clamp(16px, 4vw, 56px);
+  --max: 1440px;
+  /* El arco: radio enorme arriba, recto abajo. Siempre medio círculo. */
+  --door: 100vmax 100vmax 0 0;
+
+  --noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 1.6 -0.3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--text);
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--cream);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, p { margin: 0; }
+::selection { background: var(--yellow); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ---------- Campos de color. LOS FONDOS SIEMPRE CON NOISE ---------- */
+
+.field { position: relative; isolation: isolate; }
+.field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background-image: var(--noise);
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+}
+/* Azul y naranja usan los fondos reales del sitio, que ya traen grano y viñeta. */
+.field--blue { background: var(--blue) url("media/hero-bg.webp") center / cover; color: var(--cream); }
+.field--orange { background: var(--orange) url("media/lineup-bg.webp") center / cover; color: var(--cream); }
+.field--cream { background: var(--cream); color: var(--ink); }
+.field--ink { background: var(--ink); color: var(--cream); }
+.field--yellow { background: var(--yellow); color: var(--ink); }
+.field--red { background: var(--red); color: var(--cream); }
+.field--blue::after, .field--orange::after { opacity: 0.2; }
+.field--cream::after { opacity: 0.35; mix-blend-mode: multiply; }
+
+/* ---------- Tipo ---------- */
+
+.mega {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: var(--track-mega);
+  line-height: 0.78;
+  text-transform: uppercase;
+}
+.display {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: var(--track);
+  line-height: 0.9;
+}
+.caps { text-transform: uppercase; }
+.eyebrow {
+  font-family: var(--ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+/* Manifiesto en cuerpo chico y mayúsculas, como la pieza institucional. */
+.manifest {
+  font-family: var(--text);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.manifest p + p { margin-top: 1.1em; }
+.lead { font-size: clamp(18px, 1.6vw, 22px); line-height: 1.4; font-weight: 500; }
+
+/* ---------- Firma «Casa Abierta» ---------- */
+
+.firma {
+  display: block;
+  aspect-ratio: 1782 / 433;
+  background: currentColor;
+  -webkit-mask: url("media/casa-abierta-script.webp") center / contain no-repeat;
+  mask: url("media/casa-abierta-script.webp") center / contain no-repeat;
+  pointer-events: none;
+}
+/* Las dos mitades de la firma, para animarlas por separado sin deformar el giro original. */
+.firma--casa { clip-path: inset(0 57% 0 0); }
+.firma--abierta { clip-path: inset(0 0 0 42%); }
+
+/* ---------- Logo Hillsong Leadership Network ---------- */
+
+.hln { display: block; width: auto; height: 40px; }
+.hln--light { filter: invert(1); }
+
+/* ---------- Lockup CA27 + firma ---------- */
+
+.lockup {
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.lockup > * { grid-area: 1 / 1; }
+.lockup .mega { color: var(--ink); font-size: clamp(120px, 30vw, 520px); }
+.lockup .firma { width: 104%; color: var(--cream); transform: translate(-2%, 6%); }
+
+/* ---------- La puerta ---------- */
+
+.door { border-radius: var(--door); overflow: hidden; }
+.door img { width: 100%; height: 100%; object-fit: cover; }
+/* speaker-XX.webp y obelisco.webp ya vienen recortados en arco con transparencia. */
+.door-cut { display: block; width: 100%; height: auto; }
+
+/* ---------- Lineup ---------- */
+
+.names {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: var(--track);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+.names .slash { font-weight: 500; opacity: 0.9; }
+/* Un apellido nunca se corta: cada nombre va en .nm */
+.names .nm { white-space: nowrap; }
+.names-local { font-family: var(--text); font-weight: 500; text-transform: none; letter-spacing: 0; }
+
+/* ---------- Pattern de fondo: CASA ABIERTA amarillo, apenas fuera de foco ---------- */
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--yellow);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(120px, 24vw, 420px);
+  letter-spacing: var(--track-mega);
+  line-height: 0.8;
+  text-transform: uppercase;
+  white-space: nowrap;
+  filter: blur(2px);
+  pointer-events: none;
+  user-select: none;
+}
+.pattern span { display: block; }
+.pattern span:nth-child(even) { transform: translateX(-18%); }
+
+/* «CA27» chico desparramado, como en el afiche */
+.tag27 {
+  position: absolute;
+  z-index: 3;
+  font-family: var(--text);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  pointer-events: none;
+}
+
+/* ---------- Botones ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, transform 0.25s var(--ease);
+}
+.btn:hover { background: var(--yellow); color: var(--ink); }
+.btn:active { transform: translateY(1px); }
+.btn--ink { background: var(--ink); color: var(--cream); }
+.btn--line { background: transparent; color: inherit; box-shadow: inset 0 0 0 2px currentColor; }
+.btn--line:hover { box-shadow: none; }
+.btn--sm { min-width: 0; height: 40px; padding: 0 16px; font-size: 13px; }
+
+/* ---------- Marquesina ---------- */
+
+.mq { overflow: hidden; cursor: grab; user-select: none; }
+.mq.is-drag { cursor: grabbing; }
+.mq-track { display: flex; width: max-content; will-change: transform; }
+.mq-track > * { flex: none; white-space: nowrap; }
+
+/* ---------- Entrada al scrollear ---------- */
+
+[data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.9s var(--ease); }
+[data-reveal].is-in { opacity: 1; transform: none; }
+
+/* ---------- Preguntas (las tres del sitio publicado) ---------- */
+
+.faq { padding: clamp(72px, 12vh, 140px) var(--gut); }
+.faq-in { max-width: 760px; margin: 0 auto; }
+.faq h2 { font-family: var(--display); font-weight: 700; letter-spacing: var(--track); font-size: clamp(32px, 4.4vw, 56px); line-height: 0.95; margin-bottom: 28px; }
+.faq details { border: 1px solid var(--line); border-radius: 8px; margin-top: 10px; }
+.faq summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-weight: 400; font-size: 22px; line-height: 0.8; transition: transform 0.3s var(--ease); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 18px 18px; font-family: var(--ui); opacity: 0.7; }
+
+/* ---------- Pie (igual en las cuatro) ---------- */
+
+.foot { padding: 28px var(--gut); }
+.foot-in {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 14px;
+}
+.foot-in a { text-decoration: none; }
+.foot-in a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.foot-icon { width: 36px; height: 36px; }
+
+/* ---------- Volver al índice ---------- */
+
+.back {
+  position: fixed;
+  z-index: 300;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.85;
+}
+.back:hover { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  [data-reveal] { opacity: 1; transform: none; }
+}

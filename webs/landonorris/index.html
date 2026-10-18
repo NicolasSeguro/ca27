@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CA27 — Casa Abierta 2027 · Inmersiva</title>
+  <meta name="description" content="Casa Abierta 2027. 25 al 27 de febrero, Centro de Convenciones Buenos Aires.">
+  <link rel="icon" href="../shared/media/footer-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/ca27.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="back" href="../index.html">← Versiones</a>
+  <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+
+  <header class="nav" id="nav" data-theme="ink">
+    <a class="brand" href="#top">CA27</a>
+    <a class="nav-logo" href="#top" aria-label="Inicio"><img class="hln" src="../shared/media/hln-logo.webp" alt="Hillsong Leadership Network"></a>
+    <div class="nav-end">
+      <a class="btn btn--sm nav-cta" href="https://casaabierta.com/buenosaires">Registrate</a>
+      <button class="ham" id="ham" type="button" aria-expanded="false" aria-controls="menu"><span>Menú</span><i></i><i></i></button>
+    </div>
+  </header>
+
+  <div class="menu field field--ink" id="menu" hidden>
+    <div class="menu-art door"><img id="menuImg" src="../shared/piezas/lockup.webp" alt=""></div>
+    <nav aria-label="Capítulos">
+      <a href="#top" data-art="../shared/piezas/lockup.webp"><span>00</span>Inicio</a>
+      <a href="#encuentro" data-art="../shared/piezas/institucional.webp"><span>01</span>El encuentro</a>
+      <a href="#piezas" data-art="../shared/media/banner.webp"><span>02</span>Piezas</a>
+      <a href="#sala" data-art="../shared/piezas/guitarra.webp"><span>03</span>Sala y ciudad</a>
+      <a href="#lineup" data-art="../shared/piezas/oradores.webp"><span>04</span>Lineup</a>
+      <a href="#preguntas" data-art="../shared/piezas/multitud.webp"><span>05</span>Preguntas</a>
+    </nav>
+    <p class="eyebrow menu-foot">25 — 27 de febrero 2027 · Centro de Convenciones Buenos Aires</p>
+  </div>
+
+  <main>
+    <!-- 00 · Hero: lámina 5 del deck + puertas flotantes del sitio publicado -->
+    <section class="hero field field--blue" id="top" data-nav="ink">
+      <div class="floaters" id="floaters" aria-hidden="true">
+        <img class="door-cut" style="--x:6%;--y:14%;--s:62px" src="../shared/media/speaker-01.webp" alt="">
+        <img class="door-cut" style="--x:19%;--y:24%;--s:48px" src="../shared/media/speaker-02.webp" alt="">
+        <img class="door-cut" style="--x:3%;--y:52%;--s:44px" src="../shared/media/speaker-03.webp" alt="">
+        <img class="door-cut" style="--x:17%;--y:70%;--s:56px" src="../shared/media/speaker-04.webp" alt="">
+        <img class="door-cut" style="--x:7%;--y:82%;--s:40px" src="../shared/media/speaker-05.webp" alt="">
+        <img class="door-cut" style="--x:72%;--y:12%;--s:52px" src="../shared/media/speaker-06.webp" alt="">
+        <img class="door-cut" style="--x:90%;--y:18%;--s:44px" src="../shared/media/speaker-07.webp" alt="">
+        <img class="door-cut" style="--x:93%;--y:50%;--s:58px" src="../shared/media/speaker-08.webp" alt="">
+        <img class="door-cut" style="--x:80%;--y:66%;--s:50px" src="../shared/media/speaker-09.webp" alt="">
+        <img class="door-cut" style="--x:70%;--y:86%;--s:42px" src="../shared/media/speaker-10.webp" alt="">
+        <img class="door-cut" style="--x:30%;--y:10%;--s:38px" src="../shared/media/speaker-11.webp" alt="">
+      </div>
+      <h1 class="lockup hero-lockup">
+        <span class="mega" aria-hidden="true">CA27</span>
+        <span class="firma" role="img" aria-label="Casa Abierta"></span>
+        <span class="sr">CA27 Casa Abierta 2027</span>
+      </h1>
+      <div class="hero-info">
+        <p class="hero-date display">25 al 27 de febrero 2027</p>
+        <p>Centro de Convenciones Buenos Aires</p>
+        <p class="hero-city">Buenos Aires · Argentina</p>
+        <a class="btn" href="https://casaabierta.com/buenosaires">Registrate</a>
+      </div>
+      <aside class="next" aria-label="Próximo encuentro">
+        <p class="eyebrow">Próximo encuentro</p>
+        <p class="next-n display"><b id="days">—</b> días</p>
+        <p>para el jueves 25 de febrero</p>
+      </aside>
+    </section>
+
+    <!-- 01 · El manifiesto: cada párrafo se ilumina palabra por palabra al cruzar la pantalla -->
+    <section class="read field field--ink" id="encuentro" data-nav="cream">
+      <div class="read-in">
+        <p class="eyebrow chapter">01 — El encuentro</p>
+        <div class="read-text display" id="readText">
+          <p>Casa Abierta es un encuentro para quienes desean crecer en liderazgo, profundizar en su servicio y ser parte de lo que Dios está haciendo en su iglesia.</p>
+          <p>Durante estos días nos reuniremos para aprender, compartir, hacer preguntas, construir relaciones y descubrir nuevas formas de servir al Reino.</p>
+          <p>Porque creemos que Dios ya está haciendo algo entre nosotros. Y que esto es apenas el comienzo.</p>
+          <p class="read-last">Sé parte de lo que Él ya está haciendo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · Piezas reales del deck: tira horizontal fijada (desktop) o carrusel (mobile) -->
+    <section class="pin field field--orange" id="piezas" data-nav="cream">
+      <div class="pin-sticky">
+        <div class="pattern" aria-hidden="true"><span>Casa Abierta</span><span>Casa Abierta</span></div>
+        <div class="pin-track" id="track">
+          <div class="pin-intro">
+            <p class="eyebrow chapter">02 — Piezas</p>
+            <h2 class="display">Así se ve Casa Abierta.</h2>
+            <p class="pin-sub">Siete piezas del deck. <span class="pin-how">Seguí bajando.</span></p>
+          </div>
+          <figure class="piece wide"><img src="../shared/piezas/lockup.webp" alt="Lockup CA27 con la firma Casa Abierta sobre azul"><figcaption><b>01</b> Lockup · pantalla</figcaption></figure>
+          <figure class="piece"><img src="../shared/piezas/institucional.webp" alt="Pieza institucional con el manifiesto sobre crema"><figcaption><b>02</b> Institucional</figcaption></figure>
+          <figure class="piece"><img src="../shared/piezas/oradores.webp" alt="Grilla de oradores en arcos sobre azul"><figcaption><b>03</b> Oradores</figcaption></figure>
+          <figure class="piece"><img src="../shared/piezas/multitud.webp" alt="Multitud en adoración con la firma encima"><figcaption><b>04</b> En sala</figcaption></figure>
+          <figure class="piece"><img src="../shared/piezas/guitarra.webp" alt="Guitarrista en blanco y negro con CA27 cortado"><figcaption><b>05</b> Música</figcaption></figure>
+          <figure class="piece wide"><img src="../shared/media/banner.webp" alt="Afiche de lineup y grabación en vivo"><figcaption><b>06</b> Lineup · pantalla</figcaption></figure>
+          <figure class="piece wide"><img src="../shared/piezas/gracias.webp" alt="Cierre gracias con la firma"><figcaption><b>07</b> Cierre</figcaption></figure>
+          <div class="pin-end">
+            <p class="display">25 — 27 de febrero</p>
+            <a class="btn btn--ink" href="https://casaabierta.com/buenosaires">Registrate</a>
+          </div>
+        </div>
+        <div class="pin-bar" aria-hidden="true"><span id="pinBar"></span></div>
+      </div>
+    </section>
+
+    <!-- 03 · En sala / En la ciudad -->
+    <section class="split" id="sala">
+      <article class="half half--sala field field--ink" data-nav="cream">
+        <img src="../shared/piezas/guitarra.webp" alt="">
+        <div class="half-copy">
+          <p class="eyebrow chapter">03 — En sala</p>
+          <h2 class="display">Grabación en vivo de nuevo álbum de Hillsong en Español.</h2>
+          <p class="names special"><span class="nm">Hillsong en Español</span> <span class="slash">/</span> <span class="nm">Nigel Hendroff</span> <span class="slash">/</span> <span class="nm">Jad Gillies</span> <span class="slash">/</span> <span class="nm">Israel Houghton</span></p>
+        </div>
+      </article>
+      <article class="half half--ciudad field field--blue" id="ciudad" data-nav="ink">
+        <img class="door-cut obelisco" src="../shared/media/obelisco.webp" alt="Obelisco de Buenos Aires">
+        <div class="half-copy">
+          <p class="eyebrow chapter">En la ciudad</p>
+          <h2 class="display">Centro de Convenciones Buenos Aires.</h2>
+          <p>Jueves 25, viernes 26 y sábado 27 de febrero de 2027.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 · Lineup: fotos sin nombre, nombres en tipo -->
+    <section class="lineup field field--cream" id="lineup" data-nav="ink">
+      <header class="lineup-head">
+        <p class="eyebrow chapter">04 — Lineup</p>
+        <p class="lineup-note">Pasá el mouse por las puertas.</p>
+      </header>
+      <div class="doors">
+        <img class="door-cut" src="../shared/media/speaker-01.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-02.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-03.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-04.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-05.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-06.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-07.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-08.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-09.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-10.webp" alt="">
+        <img class="door-cut" src="../shared/media/speaker-11.webp" alt="">
+        <img class="door-cut" src="../shared/media/obelisco.webp" alt="Obelisco de Buenos Aires">
+      </div>
+      <h2 class="names lineup-names" data-reveal>
+        <span class="nm">Luna</span> <span class="slash">/</span> <span class="nm">Dooley</span> <span class="slash">/</span> <span class="nm">Mendez</span> <span class="slash">/</span> <span class="nm">Lopez</span> <span class="slash">/</span>
+        <span class="nm">Clarke</span> <span class="slash">/</span> <span class="nm">Douglas</span> <span class="slash">/</span> <span class="nm">Rui Boto</span> <span class="slash">/</span> <span class="nm">Mejías</span>
+      </h2>
+      <p class="names-local lineup-local">+ nuestro equipo local</p>
+    </section>
+
+    <section class="faq field field--ink" id="preguntas" data-nav="cream">
+      <div class="faq-in">
+        <p class="eyebrow chapter">05 — Preguntas</p>
+        <h2>Preguntas sobre nuestra conferencia</h2>
+        <details><summary>¿Habrá Kids? ¿Desde qué edades?</summary><p>Respuesta pendiente de confirmar.</p></details>
+        <details><summary>Si solo puedo asistir uno de los días, ¿puedo pagar solo por ese día?</summary><p>Respuesta pendiente de confirmar.</p></details>
+        <details><summary>¿Cuál es la política de reembolso o cancelación?</summary><p>Respuesta pendiente de confirmar.</p></details>
+      </div>
+    </section>
+
+    <!-- Cierre: lámina 10 -->
+    <section class="close field field--blue" id="gracias" data-nav="ink">
+      <div class="lockup close-lockup">
+        <p class="mega close-word" aria-hidden="true">gracias</p>
+        <span class="firma" role="img" aria-label="Casa Abierta"></span>
+      </div>
+      <div class="close-cta">
+        <a class="btn" href="https://casaabierta.com/buenosaires">Registrate</a>
+        <a class="close-url display" href="https://casaabierta.com/buenosaires">casaabierta.com/buenosaires</a>
+      </div>
+      <img class="hln hln--light close-hln" src="../shared/media/hln-logo.webp" alt="Hillsong Leadership Network">
+      <footer class="foot">
+        <div class="foot-in">
+          <img class="foot-icon" src="../shared/media/footer-icon.webp" alt="Hillsong">
+          <a href="mailto:ventas.buenosaires@hillsong.com">ventas.buenosaires@hillsong.com</a>
+          <a href="https://instagram.com/hillsongbuenosaires">@hillsongbuenosaires</a>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="../shared/ca27.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

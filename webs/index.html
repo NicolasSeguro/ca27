@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CA27 — Versiones del sitio</title>
+  <meta name="description" content="Casa Abierta 2027. Cuatro estructuras de sitio con la misma identidad.">
+  <link rel="icon" href="shared/media/footer-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/ca27.css">
+  <style>
+    .top { min-height: 100svh; display: grid; grid-template-rows: auto 1fr auto; justify-items: center; padding: 28px var(--gut) 40px; overflow: hidden; }
+    .top .lockup { align-self: center; width: 100%; }
+    .top .mega { font-size: clamp(120px, 31vw, 560px); }
+    .top .firma { width: min(1180px, 96vw); }
+    .url { font-family: var(--display); font-weight: 700; letter-spacing: var(--track); color: var(--ink); font-size: clamp(22px, 3.4vw, 56px); text-decoration: none; }
+    .top .eyebrow { margin-top: 10px; color: var(--ink); text-align: center; }
+
+    .intro { padding: clamp(72px, 12vh, 140px) var(--gut) 40px; max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px 64px; align-items: end; }
+    .intro h1 { font-size: clamp(44px, 6.4vw, 104px); }
+    .intro p { max-width: 44ch; }
+
+    .list { list-style: none; margin: 0 auto; padding: 0 var(--gut) clamp(72px, 12vh, 140px); max-width: var(--max); }
+    .list li { border-top: 2px solid var(--ink); }
+    .list li:last-child { border-bottom: 2px solid var(--ink); }
+    .list a { display: grid; grid-template-columns: 72px 1.1fr 1fr 150px; gap: 24px; align-items: center; padding: 22px 0; text-decoration: none; }
+    .list .n { font-family: var(--display); font-weight: 700; letter-spacing: var(--track); font-size: 40px; }
+    .list h2 { font-size: clamp(40px, 5.4vw, 84px); text-transform: uppercase; transition: transform 0.5s var(--ease); }
+    .list .ref { display: block; margin-top: 8px; color: var(--ink-soft); }
+    .list p { max-width: 38ch; }
+    .list .door { aspect-ratio: 4 / 5; background: var(--ink); transition: transform 0.5s var(--ease); }
+    .list a:hover h2 { transform: translateX(12px); }
+    .list a:hover .door { transform: translateY(-6px) rotate(-2deg); }
+
+    .sheet { padding: clamp(72px, 12vh, 140px) var(--gut); }
+    .sheet-in { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px 64px; }
+    .sheet h2 { font-size: clamp(36px, 4.4vw, 64px); text-transform: uppercase; margin-bottom: 24px; }
+    .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 12px; }
+    .swatches figure { margin: 0; }
+    .swatches i { display: block; aspect-ratio: 3 / 4; border-radius: var(--door); background: var(--c); }
+    .swatches i.edge { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cream) 40%, transparent); }
+    .swatches figcaption { margin-top: 8px; font-family: var(--ui); font-weight: 700; font-size: 13px; }
+    .type-sample { font-size: clamp(34px, 4vw, 56px); line-height: 1; }
+    .type-note { margin-top: 10px; color: var(--cream-soft); font-family: var(--ui); font-size: 14px; }
+    .sheet .firma { width: min(520px, 100%); margin: 28px 0 8px; color: var(--cream); }
+    .rules { list-style: none; padding: 0; margin: 0; counter-reset: r; }
+    .rules li { counter-increment: r; display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); font-size: 17px; line-height: 1.4; }
+    .rules li::before { content: counter(r, decimal-leading-zero); font-family: var(--ui); font-weight: 700; font-size: 13px; padding-top: 3px; }
+
+    @media (max-width: 860px) {
+      .intro, .sheet-in { grid-template-columns: 1fr; }
+      .list a { grid-template-columns: 48px 1fr 96px; }
+      .list p { grid-column: 2 / 4; grid-row: 2; }
+      .list .door { grid-column: 3; grid-row: 1; }
+      .list .n { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top field field--blue" id="top">
+    <img class="hln" src="shared/media/hln-logo.webp" alt="Hillsong Leadership Network">
+    <div class="lockup" aria-label="CA27 Casa Abierta">
+      <p class="mega" aria-hidden="true">CA27</p>
+      <span class="firma" role="img" aria-label="Casa Abierta"></span>
+    </div>
+    <div>
+      <a class="url" href="https://casaabierta.com/buenosaires">casaabierta.com/buenosaires</a>
+      <p class="eyebrow">25 — 27 de febrero 2027 · Centro de Convenciones Buenos Aires</p>
+    </div>
+  </header>
+
+  <main class="field field--cream">
+    <section class="intro" id="versiones">
+      <h1 class="display">Un encuentro, cuatro formas de recorrerlo.</h1>
+      <p class="lead">Las cuatro versiones cuentan lo mismo, con los mismos datos y la misma identidad: qué es, quiénes vienen, dónde y cuándo, y cómo registrarse. Cambia la estructura, tomada de una referencia distinta.</p>
+    </section>
+
+    <ol class="list">
+      <li>
+        <a href="landonorris/">
+          <span class="n">01</span>
+          <div><h2 class="display">Inmersiva</h2><span class="eyebrow ref">Ref. landonorris.com</span></div>
+          <p>Capítulos a pantalla completa. El manifiesto se ilumina palabra por palabra y las piezas del deck pasan en una tira horizontal fijada.</p>
+          <div class="door"><img src="shared/piezas/lockup.webp" alt=""></div>
+        </a>
+      </li>
+      <li>
+        <a href="lajoya/">
+          <span class="n">02</span>
+          <div><h2 class="display">Editorial</h2><span class="eyebrow ref">Ref. lajoya-foods.com</span></div>
+          <p>Campo naranja con CA27 y la firma entrando en dos partes. Después, bloques alternados: cada apellido repetido como textura, fotos a sangre y afiches.</p>
+          <div class="door"><img src="shared/media/banner.webp" alt=""></div>
+        </a>
+      </li>
+      <li>
+        <a href="gutfeeling/">
+          <span class="n">03</span>
+          <div><h2 class="display">Manifiesto</h2><span class="eyebrow ref">Ref. gutfeeling.agency</span></div>
+          <p>Una frase de apertura y un muro de piezas para arrastrar: puertas, apellidos, fechas y afiches. El manifiesto completo viene después.</p>
+          <div class="door"><img src="shared/piezas/multitud.webp" alt=""></div>
+        </a>
+      </li>
+      <li>
+        <a href="meety/">
+          <span class="n">04</span>
+          <div><h2 class="display">Conferencia</h2><span class="eyebrow ref">Ref. Meety (Webflow)</span></div>
+          <p>Portada con cuenta regresiva, los tres días, oradores, lugar y piezas filtrables. Sin cronograma inventado: el programa sigue a confirmar.</p>
+          <div class="door"><img src="shared/piezas/oradores.webp" alt=""></div>
+        </a>
+      </li>
+    </ol>
+  </main>
+
+  <section class="sheet field field--ink" id="sistema">
+    <div class="sheet-in">
+      <div>
+        <h2 class="display">Paleta</h2>
+        <div class="swatches">
+          <figure><i style="--c:#0648f8"></i><figcaption>0648F8</figcaption></figure>
+          <figure><i style="--c:#e55725"></i><figcaption>E55725</figcaption></figure>
+          <figure><i class="edge" style="--c:#0d1517"></i><figcaption>0D1517</figcaption></figure>
+          <figure><i style="--c:#fffaf6"></i><figcaption>FFFAF6</figcaption></figure>
+          <figure><i style="--c:#02ca2d"></i><figcaption>02CA2D</figcaption></figure>
+          <figure><i style="--c:#b609b0"></i><figcaption>B609B0</figcaption></figure>
+          <figure><i style="--c:#ff2b03"></i><figcaption>FF2B03</figcaption></figure>
+          <figure><i style="--c:#f3f000"></i><figcaption>F3F000</figcaption></figure>
+        </div>
+      </div>
+      <div>
+        <h2 class="display">Tipo y firma</h2>
+        <p class="type-sample display">Aa Bb Cc Ññ<br>LUNA / DOOLEY</p>
+        <p class="type-note">Neue Haas Grotesk, Medium y 75 Bold, muy cerrada. Sin la fuente instalada, Schibsted Grotesk.</p>
+        <span class="firma" role="img" aria-label="Casa Abierta"></span>
+        <p class="type-note">Tritopani, solo para «Casa Abierta». Casa −8,30°, Abierta +6,30°.</p>
+      </div>
+      <div style="grid-column: 1 / -1">
+        <h2 class="display">Reglas que siguen las cuatro</h2>
+        <ol class="rules">
+          <li>Fecha visible: 25 — 27 de febrero de 2027. Nunca 27 — 29.</li>
+          <li>Dos registros: institucional en crema, festival en azul o naranja con el grano del fondo.</li>
+          <li>La firma solo dice «Casa Abierta» y cruza el grotesco. No se usa para destacar otras palabras.</li>
+          <li>El arco es la puerta: recorta fotos y piezas. Buenos Aires es el Obelisco.</li>
+          <li>Tinta 0D1517 y crema FFFAF6, nunca negro ni blanco puros. El logo de Hillsong Leadership Network siempre está.</li>
+          <li>Las fotos de oradores no llevan nombre al lado: el lineup se lee en tipo, aparte.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot field field--blue">
+    <div class="foot-in">
+      <img class="foot-icon" src="shared/media/footer-icon.webp" alt="Hillsong">
+      <a href="mailto:ventas.buenosaires@hillsong.com">ventas.buenosaires@hillsong.com</a>
+      <a href="https://instagram.com/hillsongbuenosaires">@hillsongbuenosaires</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CA27 — Casa Abierta 2027 · Editorial</title>
+  <meta name="description" content="Casa Abierta 2027. 25 al 27 de febrero, Centro de Convenciones Buenos Aires.">
+  <link rel="icon" href="../shared/media/footer-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/ca27.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="back" href="../index.html">← Versiones</a>
+
+  <header class="header">
+    <button class="bars" id="openMenu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><i></i><i></i></button>
+    <nav class="h-links" aria-label="Secciones">
+      <a href="#manifiesto">Sobre</a>
+      <a href="#lineup">Lineup</a>
+    </nav>
+    <a class="h-mark" href="#top" aria-label="CA27, inicio">CA27</a>
+    <button class="btn btn--sm btn--ink h-reserve" id="openPanel" type="button" aria-controls="panel">Reservar</button>
+  </header>
+
+  <div class="menu field field--yellow" id="menu" hidden>
+    <button class="menu-x eyebrow" id="closeMenu" type="button">Cerrar</button>
+    <nav aria-label="Menú">
+      <a href="#lineup"><span class="mask"><span>Lineup</span></span></a>
+      <a href="#manifiesto"><span class="mask"><span>Sobre</span></span></a>
+      <a href="#ciudad"><span class="mask"><span>Ciudad</span></span></a>
+      <a href="#preguntas"><span class="mask"><span>Preguntas</span></span></a>
+    </nav>
+    <p class="eyebrow">25 — 27 de febrero 2027 · Centro de Convenciones Buenos Aires</p>
+  </div>
+
+  <aside class="panel" id="panel" hidden>
+    <div class="panel-bg" id="panelBg"></div>
+    <div class="panel-box field field--cream" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+      <header>
+        <h2 class="display" id="panelTitle">Reservar</h2>
+        <button type="button" id="closePanel" class="eyebrow">Cerrar</button>
+      </header>
+      <span class="firma" role="img" aria-label="Casa Abierta"></span>
+      <dl>
+        <dt class="eyebrow">Cuándo</dt><dd>Jueves 25 al sábado 27 de febrero de 2027</dd>
+        <dt class="eyebrow">Dónde</dt><dd>Centro de Convenciones Buenos Aires</dd>
+        <dt class="eyebrow">En sala</dt><dd>+ Grabación en vivo de nuevo álbum de Hillsong en Español</dd>
+        <dt class="eyebrow">Consultas</dt><dd><a href="mailto:ventas.buenosaires@hillsong.com">ventas.buenosaires@hillsong.com</a></dd>
+      </dl>
+      <a class="btn btn--ink" href="https://casaabierta.com/buenosaires">Registrate</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Hero: un solo campo de color, el monograma y la firma entrando por los costados -->
+    <section class="hero field field--orange" id="top">
+      <div class="pattern" aria-hidden="true"><span>Casa Abierta</span><span>Casa Abierta</span><span>Casa Abierta</span></div>
+      <span class="tag27" style="left:4%;top:18%">CA27</span>
+      <span class="tag27" style="right:6%;top:24%">FEB 25 — 27</span>
+      <span class="tag27" style="left:8%;top:58%">FEB 25 — 27</span>
+      <span class="tag27" style="right:10%;top:62%">CA27</span>
+      <img class="hln hero-hln" src="../shared/media/hln-logo.webp" alt="Hillsong Leadership Network">
+      <div class="hero-lock" aria-hidden="true">
+        <span class="mega">CA27</span>
+        <span class="firma firma--casa"></span>
+        <span class="firma firma--abierta"></span>
+      </div>
+      <div class="hero-info">
+        <h1 class="hero-title display">Casa Abierta 2027</h1>
+        <p class="hero-what">Un encuentro para quienes desean crecer en liderazgo, profundizar en su servicio y ser parte de lo que Dios está haciendo en su iglesia.</p>
+        <div class="hero-when">
+          <p class="display">25 — 27 de febrero</p>
+          <p>Centro de Convenciones Buenos Aires</p>
+          <button class="btn btn--ink" type="button" data-open-panel>Reservar</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="band mq field field--ink" data-marquee data-speed="0.7">
+      <div class="mq-track"><span>Luna / Dooley / Mendez / Lopez / Clarke / Douglas / Rui Boto / Mejías / + nuestro equipo local /&nbsp;</span></div>
+    </div>
+
+    <section class="tiles">
+      <!-- Ficha de lineup: cada apellido repetido es el título -->
+      <article class="tile t-lineup field field--yellow" id="lineup">
+        <header class="tile-head"><p class="eyebrow">El lineup</p><p class="eyebrow">08 + equipo local</p></header>
+        <div class="rows">
+          <div class="row mq" data-marquee data-hover-pause data-speed="0.5"><div class="mq-track"><span>Luna Luna Luna Luna&nbsp;</span></div></div>
+          <div class="row mq" data-marquee data-hover-pause data-dir="right" data-speed="0.5"><div class="mq-track"><span>Dooley Dooley Dooley&nbsp;</span></div></div>
+          <div class="row mq" data-marquee data-hover-pause data-speed="0.5"><div class="mq-track"><span>Mendez Mendez Mendez&nbsp;</span></div></div>
+          <div class="row mq" data-marquee data-hover-pause data-dir="right" data-speed="0.5"><div class="mq-track"><span>Lopez Lopez Lopez Lopez&nbsp;</span></div></div>
+          <div class="row mq" data-marquee data-hover-pause data-speed="0.5"><div class="mq-track"><span>Clarke Clarke Clarke&nbsp;</span></div></div>
+          <div class="row mq" data-marquee data-hover-pause data-dir="right" data-speed="0.5"><div class="mq-track"><span>Douglas Douglas Douglas&nbsp;</span></div></div>
+          <div class="row mq" data-marquee data-hover-pause data-speed="0.5"><div class="mq-track"><span>Rui Boto Rui Boto&nbsp;</span></div></div>
+          <div class="row mq" data-marquee data-hover-pause data-dir="right" data-speed="0.5"><div class="mq-track"><span>Mejías Mejías Mejías&nbsp;</span></div></div>
+        </div>
+        <p class="tile-foot names-local">+ nuestro equipo local</p>
+      </article>
+
+      <figure class="tile t-photo"><img src="../shared/piezas/multitud.webp" alt="Multitud en adoración con la firma Casa Abierta encima"></figure>
+
+      <figure class="tile t-poster"><img src="../shared/media/banner.webp" alt="Afiche: Luna, Dooley, Mendez, Lopez, Clarke, Mejías, Rui Boto, Hillsong en Español, Nigel Hendroff, Jad Gillies, Israel Houghton. Grabación en vivo de nuevo álbum de Hillsong en Español. Centro de Convenciones Buenos Aires, 25 al 27 de febrero."></figure>
+
+      <article class="tile t-city field field--blue" id="ciudad">
+        <img class="door-cut" src="../shared/media/obelisco.webp" alt="Obelisco de Buenos Aires">
+        <div class="mq city-run" data-marquee data-speed="0.6"><div class="mq-track"><span>Buenos Aires · Buenos Aires ·&nbsp;</span></div></div>
+      </article>
+
+      <article class="tile t-about field field--cream" id="manifiesto">
+        <img class="hln" src="../shared/media/hln-logo.webp" alt="Hillsong Leadership Network">
+        <div class="about-lock">
+          <span class="firma" role="img" aria-label="Casa Abierta"></span>
+          <p class="display about-date">febrero 25 — febrero 27</p>
+        </div>
+        <div class="manifest">
+          <p>Casa Abierta es un encuentro para quienes desean crecer en liderazgo, profundizar en su servicio y ser parte de lo que Dios está haciendo en su iglesia.</p>
+          <p>Durante estos días nos reuniremos para aprender, compartir, hacer preguntas, construir relaciones y descubrir nuevas formas de servir al Reino. Seremos desafiados en nuestra fe, fortalecidos en nuestro llamado y equipados para llevar lo que recibimos de vuelta a nuestras iglesias y comunidades.</p>
+          <p>Porque creemos que Dios ya está haciendo algo entre nosotros. Y que esto es apenas el comienzo.</p>
+          <p>Sé parte de lo que Él ya está haciendo.</p>
+        </div>
+        <p class="display about-sign">CA27 / Buenos Aires</p>
+      </article>
+
+      <article class="tile t-special field field--red">
+        <p class="eyebrow">Participación especial</p>
+        <p class="names special-names">
+          <span class="nm">Hillsong en Español</span><br>
+          <span class="nm">Nigel Hendroff</span><br>
+          <span class="nm">Jad Gillies</span><br>
+          <span class="nm">Israel Houghton</span>
+        </p>
+        <p class="special-album">+ Grabación en vivo de nuevo álbum de Hillsong en Español</p>
+      </article>
+
+      <figure class="tile t-photo2"><img src="../shared/piezas/guitarra.webp" alt="Guitarrista en blanco y negro con CA27"></figure>
+
+      <article class="tile t-grid field field--blue">
+        <p class="grid-ca display" aria-hidden="true">CA27</p>
+        <div class="grid-doors">
+          <img class="door-cut" src="../shared/media/speaker-01.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-02.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-03.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-04.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-05.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-06.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-07.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-08.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-09.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-10.webp" alt="">
+          <img class="door-cut" src="../shared/media/speaker-11.webp" alt="">
+          <img class="door-cut" src="../shared/media/obelisco.webp" alt="Obelisco de Buenos Aires">
+        </div>
+        <div class="grid-info">
+          <p class="names grid-names">
+            <span class="nm">Luna</span> / <span class="nm">Dooley</span> / <span class="nm">Mendez</span> / <span class="nm">Lopez</span><br>
+            <span class="nm">Clarke</span> / <span class="nm">Douglas</span> / <span class="nm">Rui Boto</span> / <span class="nm">Mejías</span>
+          </p>
+          <p class="names-local">+ nuestro equipo local</p>
+          <p class="grid-data">25 — 27 de febrero / Buenos Aires<br>casaabierta.com/buenosaires</p>
+          <img class="hln hln--light" src="../shared/media/hln-logo.webp" alt="Hillsong Leadership Network">
+        </div>
+      </article>
+    </section>
+
+    <div class="band mq field field--orange" data-marquee data-dir="right" data-speed="0.7">
+      <div class="mq-track"><span>25 — 27 de febrero / Centro de Convenciones Buenos Aires / casaabierta.com/buenosaires /&nbsp;</span></div>
+    </div>
+
+    <section class="faq field field--ink" id="preguntas">
+      <div class="faq-in">
+        <h2>Preguntas sobre nuestra conferencia</h2>
+        <details><summary>¿Habrá Kids? ¿Desde qué edades?</summary><p>Respuesta pendiente de confirmar.</p></details>
+        <details><summary>Si solo puedo asistir uno de los días, ¿puedo pagar solo por ese día?</summary><p>Respuesta pendiente de confirmar.</p></details>
+        <details><summary>¿Cuál es la política de reembolso o cancelación?</summary><p>Respuesta pendiente de confirmar.</p></details>
+        <button class="btn faq-cta" type="button" data-open-panel>Reservar</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot field field--blue">
+    <div class="foot-in">
+      <img class="foot-icon" src="../shared/media/footer-icon.webp" alt="Hillsong">
+      <a href="mailto:ventas.buenosaires@hillsong.com">ventas.buenosaires@hillsong.com</a>
+      <a href="https://instagram.com/hillsongbuenosaires">@hillsongbuenosaires</a>
+    </div>
+  </footer>
+
+  <script src="../shared/ca27.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

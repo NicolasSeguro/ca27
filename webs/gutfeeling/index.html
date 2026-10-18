@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CA27 — Casa Abierta 2027 · Manifiesto</title>
+  <meta name="description" content="Casa Abierta 2027. 25 al 27 de febrero, Centro de Convenciones Buenos Aires.">
+  <link rel="icon" href="../shared/media/footer-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/ca27.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="back" href="../index.html">← Versiones</a>
+
+  <header class="nav field--cream">
+    <a class="logo" href="#top">CA27</a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#muro">Muro</a>
+      <a href="#manifiesto">Manifiesto</a>
+      <a href="#lineup">Lineup</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <button class="btn btn--sm btn--line" type="button" data-reel>Ver las piezas</button>
+    <a class="btn btn--sm btn--ink nav-cta" href="#contacto">Sé parte</a>
+    <button class="plus" id="plus" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menú">+</button>
+  </header>
+  <div class="menu field field--yellow" id="menu" hidden>
+    <a href="#muro">Muro</a>
+    <a href="#manifiesto">Manifiesto</a>
+    <a href="#lineup">Lineup</a>
+    <a href="#preguntas">Preguntas</a>
+    <a href="#contacto">Sé parte</a>
+  </div>
+
+  <main>
+    <section class="hero field field--cream" id="top">
+      <p class="kicker eyebrow">
+        <img class="hln" src="../shared/media/hln-logo.webp" alt="Hillsong Leadership Network">
+        <span>CA27</span><span>Buenos Aires, Argentina</span>
+      </p>
+      <h1 class="display">Sé parte de lo que Él ya está <span class="peel" id="peel">haciendo.</span></h1>
+      <p class="hint" id="hint" aria-hidden="true">↑ Se despega. Probá.</p>
+      <div class="hero-row">
+        <p class="lead">25 al 27 de febrero de 2027.<br>Centro de Convenciones Buenos Aires.</p>
+        <div class="hero-side">
+          <button class="btn btn--ink" type="button" data-reel>Ver las piezas</button>
+          <a class="btn btn--line" href="#manifiesto">Lo que creemos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="work field field--blue" id="muro">
+      <div class="work-head">
+        <div>
+          <p class="eyebrow">El muro</p>
+          <p class="work-hint"><span class="fine">Arrastrá lo que quieras. Tocá un afiche para abrirlo.</span><span class="coarse">Mantené apretado para arrastrar. Tocá un afiche para abrirlo.</span></p>
+        </div>
+        <div class="work-tools">
+          <button class="btn btn--sm" id="shuffle" type="button">Barajar</button>
+          <button class="btn btn--sm btn--line" id="tidy" type="button">Ordenar</button>
+        </div>
+      </div>
+      <div class="wall" id="wall">
+        <button type="button" class="cell case w3" style="--r:-1.5deg" data-title="Lockup" data-copy="CA27 en tinta, la firma en crema encima y la URL abajo. Es la pieza madre del encuentro."><img src="../shared/piezas/lockup.webp" alt="Lockup CA27"><span class="case-cap">Lockup</span></button>
+        <div class="cell sticker name c-orange" style="--r:3deg">Luna</div>
+        <div class="cell door-cell" style="--r:-3deg"><img class="door-cut" src="../shared/media/speaker-01.webp" alt=""></div>
+        <div class="cell sticker date c-yellow" style="--r:-4deg">25 — 27<br>feb</div>
+        <button type="button" class="cell case w2 tall" style="--r:2deg" data-title="Institucional" data-copy="El registro institucional: crema, la firma con la fecha, el manifiesto completo y CA27 / Buenos Aires al pie."><img src="../shared/piezas/institucional.webp" alt="Pieza institucional"><span class="case-cap">Institucional</span></button>
+        <button type="button" class="cell disc-cell" style="--r:0deg" data-reel><span class="disc" aria-hidden="true"></span><strong>Ver las piezas</strong><em>se abre acá</em></button>
+        <div class="cell sticker name c-cream" style="--r:-2deg">Dooley</div>
+        <div class="cell door-cell city" style="--r:2.5deg"><img class="door-cut" src="../shared/media/obelisco.webp" alt="Obelisco de Buenos Aires"><span class="eyebrow">Buenos Aires</span></div>
+        <div class="cell sticker firma-cell c-red" style="--r:-3deg"><span class="firma" role="img" aria-label="Casa Abierta"></span></div>
+        <div class="cell sticker name c-magenta" style="--r:4deg">Mendez</div>
+        <div class="cell door-cell" style="--r:1.5deg"><img class="door-cut" src="../shared/media/speaker-06.webp" alt=""></div>
+        <button type="button" class="cell case w2 tall" style="--r:-2deg" data-title="Oradores" data-copy="La grilla de arcos sobre azul, con el Obelisco en la última puerta y el lineup abajo."><img src="../shared/piezas/oradores.webp" alt="Grilla de oradores"><span class="case-cap">Oradores</span></button>
+        <div class="cell sticker name c-green" style="--r:-3.5deg">Lopez</div>
+        <div class="cell sticker big27 c-ink" style="--r:2deg">CA27</div>
+        <div class="cell sticker name c-yellow" style="--r:3deg">Clarke</div>
+        <button type="button" class="cell case w2 tall" style="--r:3deg" data-title="En sala" data-copy="Foto en blanco y negro y CA27 enorme, cortado por el borde. La música es parte del encuentro."><img src="../shared/piezas/guitarra.webp" alt="Guitarrista con CA27"><span class="case-cap">En sala</span></button>
+        <div class="cell sticker name c-cream" style="--r:-1.5deg">Douglas</div>
+        <div class="cell door-cell" style="--r:-2deg"><img class="door-cut" src="../shared/media/speaker-09.webp" alt=""></div>
+        <div class="cell sticker album c-green" style="--r:2deg">+ Grabación en vivo de nuevo álbum de Hillsong en Español</div>
+        <div class="cell sticker name c-orange" style="--r:-3deg">Rui Boto</div>
+        <button type="button" class="cell case w4" style="--r:-1deg" data-title="Lineup" data-copy="Luna, Dooley, Mendez, Lopez, Clarke, Douglas, Rui Boto y Mejías. Participación especial de Hillsong en Español, Nigel Hendroff, Jad Gillies e Israel Houghton."><img src="../shared/media/banner.webp" alt="Afiche de lineup"><span class="case-cap">Lineup · pantalla</span></button>
+        <div class="cell sticker name c-magenta" style="--r:2.5deg">Mejías</div>
+        <div class="cell sticker hln-cell c-cream" style="--r:-2deg"><img class="hln" src="../shared/media/hln-logo.webp" alt="Hillsong Leadership Network"></div>
+        <div class="cell tape" id="tape"><div class="tape-row names" id="tapeRow">Luna / Dooley / Mendez / Lopez / Clarke / Douglas / Rui Boto / Mejías / + nuestro equipo local /&nbsp;Luna / Dooley / Mendez / Lopez / Clarke / Douglas / Rui Boto / Mejías / + nuestro equipo local /&nbsp;</div></div>
+      </div>
+    </section>
+
+    <section class="mani field field--cream" id="manifiesto">
+      <div class="mani-l">
+        <p class="eyebrow chip">Lo que creemos</p>
+        <span class="firma" role="img" aria-label="Casa Abierta"></span>
+        <p class="display mani-date">febrero 25 — febrero 27</p>
+      </div>
+      <div class="mani-r">
+        <p class="big display" data-reveal>Casa Abierta es un encuentro para quienes desean crecer en liderazgo, profundizar en su servicio y ser parte de lo que Dios está haciendo en su iglesia.</p>
+        <p class="big display" data-reveal>Durante estos días nos reuniremos para aprender, compartir, hacer preguntas, construir relaciones y descubrir nuevas formas de servir al Reino.</p>
+        <p class="big display" data-reveal>Seremos desafiados en nuestra fe, fortalecidos en nuestro llamado y equipados para llevar lo que recibimos de vuelta a nuestras iglesias y comunidades.</p>
+        <p class="big display" data-reveal>Porque creemos que <mark class="m-yellow">Dios ya está haciendo algo entre nosotros.</mark> Y que <mark class="m-orange">esto es apenas el comienzo.</mark></p>
+        <p class="big display" data-reveal><mark class="m-blue">Sé parte de lo que Él ya está haciendo.</mark></p>
+      </div>
+    </section>
+
+    <section class="people field field--ink" id="lineup">
+      <p class="eyebrow">Lineup</p>
+      <ul class="names people-list">
+        <li>Luna</li><li>Dooley</li><li>Mendez</li><li>Lopez</li><li>Clarke</li><li>Douglas</li><li>Rui Boto</li><li>Mejías</li>
+      </ul>
+      <p class="names-local people-local">+ nuestro equipo local</p>
+      <div class="people-special">
+        <p class="eyebrow">Participación especial</p>
+        <p class="names"><span class="nm">Hillsong en Español</span> / <span class="nm">Nigel Hendroff</span> / <span class="nm">Jad Gillies</span> / <span class="nm">Israel Houghton</span></p>
+        <p class="people-album">+ Grabación en vivo de nuevo álbum de Hillsong en Español</p>
+      </div>
+    </section>
+
+    <section class="faq field field--cream" id="preguntas">
+      <div class="faq-in">
+        <h2>Preguntas sobre nuestra conferencia</h2>
+        <details><summary>¿Habrá Kids? ¿Desde qué edades?</summary><p>Respuesta pendiente de confirmar.</p></details>
+        <details><summary>Si solo puedo asistir uno de los días, ¿puedo pagar solo por ese día?</summary><p>Respuesta pendiente de confirmar.</p></details>
+        <details><summary>¿Cuál es la política de reembolso o cancelación?</summary><p>Respuesta pendiente de confirmar.</p></details>
+      </div>
+    </section>
+
+    <section class="contact field field--orange" id="contacto">
+      <p class="eyebrow">Contacto</p>
+      <h2 class="mega say" id="say" aria-label="Sé parte">Sé parte</h2>
+      <p class="lead contact-lede">Jueves 25 al sábado 27 de febrero de 2027. Centro de Convenciones Buenos Aires.</p>
+      <div class="email-row">
+        <a class="email display" id="email" href="mailto:ventas.buenosaires@hillsong.com">ventas.buenosaires@hillsong.com</a>
+        <button class="btn btn--sm btn--ink" id="copy" type="button">Copiar</button>
+      </div>
+      <a class="btn" href="https://casaabierta.com/buenosaires">Registrate</a>
+    </section>
+  </main>
+
+  <footer class="foot field field--blue">
+    <div class="foot-in">
+      <img class="foot-icon" src="../shared/media/footer-icon.webp" alt="Hillsong">
+      <a href="mailto:ventas.buenosaires@hillsong.com">ventas.buenosaires@hillsong.com</a>
+      <a href="https://instagram.com/hillsongbuenosaires">@hillsongbuenosaires</a>
+    </div>
+  </footer>
+
+  <div class="case-view field field--cream" id="case" role="dialog" aria-modal="true" aria-labelledby="caseTitle" hidden>
+    <div class="case-art"><img id="caseImg" alt=""></div>
+    <div class="case-body">
+      <button class="btn btn--sm btn--ink case-close" id="caseClose" type="button">Cerrar</button>
+      <p class="eyebrow">Pieza</p>
+      <h2 class="display" id="caseTitle"></h2>
+      <p class="lead" id="caseCopy"></p>
+      <button class="btn" id="caseNext" type="button">Siguiente →</button>
+    </div>
+  </div>
+
+  <div class="reel field field--ink" id="reel" role="dialog" aria-modal="true" aria-label="Piezas de Casa Abierta" hidden>
+    <button class="btn btn--sm reel-close" id="closeReel" type="button">Cerrar</button>
+    <img id="reelImg" alt="">
+    <p class="eyebrow" id="reelCap"></p>
+  </div>
+
+  <script src="../shared/ca27.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -41,19 +41,6 @@
   <main>
     <!-- 00 · Hero: lámina 5 del deck + puertas flotantes del sitio publicado -->
     <section class="hero field field--blue" id="top" data-nav="ink">
-      <div class="floaters" id="floaters" aria-hidden="true">
-        <img class="door-cut" style="--x:6%;--y:14%;--s:62px" src="../shared/media/speaker-01.webp" alt="">
-        <img class="door-cut" style="--x:19%;--y:24%;--s:48px" src="../shared/media/speaker-02.webp" alt="">
-        <img class="door-cut" style="--x:3%;--y:52%;--s:44px" src="../shared/media/speaker-03.webp" alt="">
-        <img class="door-cut" style="--x:17%;--y:70%;--s:56px" src="../shared/media/speaker-04.webp" alt="">
-        <img class="door-cut" style="--x:7%;--y:82%;--s:40px" src="../shared/media/speaker-05.webp" alt="">
-        <img class="door-cut" style="--x:72%;--y:12%;--s:52px" src="../shared/media/speaker-06.webp" alt="">
-        <img class="door-cut" style="--x:90%;--y:18%;--s:44px" src="../shared/media/speaker-07.webp" alt="">
-        <img class="door-cut" style="--x:93%;--y:50%;--s:58px" src="../shared/media/speaker-08.webp" alt="">
-        <img class="door-cut" style="--x:80%;--y:66%;--s:50px" src="../shared/media/speaker-09.webp" alt="">
-        <img class="door-cut" style="--x:70%;--y:86%;--s:42px" src="../shared/media/speaker-10.webp" alt="">
-        <img class="door-cut" style="--x:30%;--y:10%;--s:38px" src="../shared/media/speaker-11.webp" alt="">
-      </div>
       <h1 class="lockup hero-lockup">
         <span class="mega" aria-hidden="true">CA27</span>
         <span class="firma" role="img" aria-label="Casa Abierta"></span>
@@ -62,27 +49,50 @@
       <div class="hero-info">
         <p class="hero-date display">25 al 27 de febrero 2027</p>
         <p>Centro de Convenciones Buenos Aires</p>
-        <p class="hero-city">Buenos Aires · Argentina</p>
+        <p class="hero-city">Un encuentro de Hillsong Leadership Network · Buenos Aires</p>
         <a class="btn" href="https://casaabierta.com/buenosaires">Registrate</a>
       </div>
-      <aside class="next" aria-label="Próximo encuentro">
-        <p class="eyebrow">Próximo encuentro</p>
-        <p class="next-n display"><b id="days">—</b> días</p>
-        <p>para el jueves 25 de febrero</p>
-      </aside>
     </section>
 
-    <!-- 01 · El manifiesto: cada párrafo se ilumina palabra por palabra al cruzar la pantalla -->
-    <section class="read field field--ink" id="encuentro" data-nav="cream">
-      <div class="read-in">
-        <p class="eyebrow chapter">01 — El encuentro</p>
-        <div class="read-text display" id="readText">
-          <p>Casa Abierta es un encuentro para quienes desean crecer en liderazgo, profundizar en su servicio y ser parte de lo que Dios está haciendo en su iglesia.</p>
-          <p>Durante estos días nos reuniremos para aprender, compartir, hacer preguntas, construir relaciones y descubrir nuevas formas de servir al Reino.</p>
-          <p>Porque creemos que Dios ya está haciendo algo entre nosotros. Y que esto es apenas el comienzo.</p>
-          <p class="read-last">Sé parte de lo que Él ya está haciendo.</p>
+    <!-- 01 · El manifiesto, en cuatro láminas que se apilan una sobre otra -->
+    <section class="stack" id="encuentro">
+      <article class="sheet field field--ink" data-nav="cream">
+        <div class="sheet-in">
+          <p class="eyebrow chapter">01 — El encuentro</p>
+          <p class="sheet-big display">Casa Abierta es un encuentro para quienes desean <em>crecer en liderazgo</em>, <em>profundizar en su servicio</em> y ser parte de lo que Dios está haciendo en su iglesia.</p>
         </div>
-      </div>
+      </article>
+      <article class="sheet sheet--verbs field field--cream" data-nav="ink">
+        <div class="sheet-in">
+          <p class="sheet-lead display">Durante estos días nos reuniremos para</p>
+          <ol class="verbs">
+            <li><span>01</span>aprender,</li>
+            <li><span>02</span>compartir,</li>
+            <li><span>03</span>hacer preguntas,</li>
+            <li><span>04</span>construir relaciones</li>
+            <li><span>05</span>y descubrir nuevas formas de servir al Reino.</li>
+          </ol>
+        </div>
+      </article>
+      <article class="sheet sheet--three field field--orange" data-nav="cream">
+        <div class="sheet-in">
+          <p class="sheet-lead display">Seremos</p>
+          <div class="three">
+            <p><b class="mega">Desafiados</b><span>en nuestra fe,</span></p>
+            <p><b class="mega">Fortalecidos</b><span>en nuestro llamado y</span></p>
+            <p><b class="mega">Equipados</b><span>para llevar lo que recibimos de vuelta a nuestras iglesias y comunidades.</span></p>
+          </div>
+        </div>
+      </article>
+      <article class="sheet sheet--last field field--blue" data-nav="ink">
+        <div class="sheet-in">
+          <p class="sheet-lead display">Porque creemos que Dios ya está haciendo algo entre nosotros. Y que esto es apenas el comienzo.</p>
+          <div class="lockup last-lock">
+            <p class="mega last-word">Sé parte de lo que Él ya está haciendo.</p>
+            <span class="firma" role="img" aria-label="Casa Abierta"></span>
+          </div>
+        </div>
+      </article>
     </section>
 
     <!-- 02 · Piezas reales del deck: tira horizontal fijada (desktop) o carrusel (mobile) -->
@@ -93,7 +103,7 @@
           <div class="pin-intro">
             <p class="eyebrow chapter">02 — Piezas</p>
             <h2 class="display">Así se ve Casa Abierta.</h2>
-            <p class="pin-sub">Siete piezas del deck. <span class="pin-how">Seguí bajando.</span></p>
+            <p class="pin-sub">Siete piezas del encuentro.</p>
           </div>
           <figure class="piece wide"><img src="../shared/piezas/lockup.webp" alt="Lockup CA27 con la firma Casa Abierta sobre azul"><figcaption><b>01</b> Lockup · pantalla</figcaption></figure>
           <figure class="piece"><img src="../shared/piezas/institucional.webp" alt="Pieza institucional con el manifiesto sobre crema"><figcaption><b>02</b> Institucional</figcaption></figure>
@@ -131,30 +141,56 @@
       </article>
     </section>
 
-    <!-- 04 · Lineup: fotos sin nombre, nombres en tipo -->
+    <!-- 04 · Lineup: al pasar por cada puerta, el orador sube al escenario -->
     <section class="lineup field field--cream" id="lineup" data-nav="ink">
       <header class="lineup-head">
         <p class="eyebrow chapter">04 — Lineup</p>
-        <p class="lineup-note">Pasá el mouse por las puertas.</p>
+        <h2 class="display">Ocho voces y nuestro equipo local.</h2>
       </header>
-      <div class="doors">
-        <img class="door-cut" src="../shared/media/speaker-01.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-02.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-03.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-04.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-05.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-06.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-07.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-08.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-09.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-10.webp" alt="">
-        <img class="door-cut" src="../shared/media/speaker-11.webp" alt="">
-        <img class="door-cut" src="../shared/media/obelisco.webp" alt="Obelisco de Buenos Aires">
+      <div class="lineup-body">
+        <div class="picks" id="picks">
+          <button class="pick" type="button" data-first="Cash" data-last="Luna" data-role="Orador" data-c="blue" data-img="../shared/oradores/luna.webp" aria-label="Cash Luna">
+            <span class="door"><img src="../shared/oradores/luna.webp" alt="" loading="lazy"></span>
+            <span class="pick-name">Luna</span>
+          </button>
+          <button class="pick" type="button" data-first="Phil" data-last="Dooley" data-role="Orador" data-c="orange" data-img="../shared/oradores/dooley.webp" aria-label="Phil Dooley">
+            <span class="door"><img src="../shared/oradores/dooley.webp" alt="" loading="lazy"></span>
+            <span class="pick-name">Dooley</span>
+          </button>
+          <button class="pick" type="button" data-first="Chris" data-last="Mendez" data-role="Pr. Hillsong LATAM" data-c="red" data-img="../shared/oradores/mendez.webp" aria-label="Chris Mendez">
+            <span class="door"><img src="../shared/oradores/mendez.webp" alt="" loading="lazy"></span>
+            <span class="pick-name">Mendez</span>
+          </button>
+          <button class="pick" type="button" data-first="Sam" data-last="Lopez" data-role="Orador" data-c="green" data-img="../shared/oradores/lopez.webp" aria-label="Sam Lopez">
+            <span class="door"><img src="../shared/oradores/lopez.webp" alt="" loading="lazy"></span>
+            <span class="pick-name">Lopez</span>
+          </button>
+          <button class="pick" type="button" data-first="Gary" data-last="Clarke" data-role="Orador" data-c="magenta" data-img="../shared/oradores/clarke.webp" aria-label="Gary Clarke">
+            <span class="door"><img src="../shared/oradores/clarke.webp" alt="" loading="lazy"></span>
+            <span class="pick-name">Clarke</span>
+          </button>
+          <button class="pick" type="button" data-first="Tim" data-last="Douglas" data-role="Orador" data-c="yellow" data-img="../shared/oradores/douglas.webp" aria-label="Tim Douglas">
+            <span class="door"><img src="../shared/oradores/douglas.webp" alt="" loading="lazy"></span>
+            <span class="pick-name">Douglas</span>
+          </button>
+          <button class="pick" type="button" data-first="Mario" data-last="Rui Boto" data-role="Orador" data-c="blue" data-img="../shared/oradores/rui-boto.webp" aria-label="Mario Rui Boto">
+            <span class="door"><img src="../shared/oradores/rui-boto.webp" alt="" loading="lazy"></span>
+            <span class="pick-name">Rui Boto</span>
+          </button>
+          <button class="pick" type="button" data-first="Juan" data-last="Mejías" data-role="Orador" data-c="orange" data-img="../shared/oradores/mejias.webp" aria-label="Juan Mejías">
+            <span class="door"><img src="../shared/oradores/mejias.webp" alt="" loading="lazy"></span>
+            <span class="pick-name">Mejías</span>
+          </button>
+        </div>
+        <div class="stage" id="stage" data-c="blue" aria-live="polite">
+          <div class="stage-photo door"><img id="stageImg" src="../shared/oradores/luna.webp" alt=""></div>
+          <div class="stage-copy">
+            <p class="eyebrow" id="stageRole">Orador</p>
+            <p class="stage-name mega"><span id="stageFirst">Cash</span><span id="stageLast">Luna</span></p>
+            <p class="stage-line display">Casa Abierta 2027<br>25 — 27 de febrero · Buenos Aires</p>
+          </div>
+        </div>
       </div>
-      <h2 class="names lineup-names" data-reveal>
-        <span class="nm">Luna</span> <span class="slash">/</span> <span class="nm">Dooley</span> <span class="slash">/</span> <span class="nm">Mendez</span> <span class="slash">/</span> <span class="nm">Lopez</span> <span class="slash">/</span>
-        <span class="nm">Clarke</span> <span class="slash">/</span> <span class="nm">Douglas</span> <span class="slash">/</span> <span class="nm">Rui Boto</span> <span class="slash">/</span> <span class="nm">Mejías</span>
-      </h2>
       <p class="names-local lineup-local">+ nuestro equipo local</p>
     </section>
 

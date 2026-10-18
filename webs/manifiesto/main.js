@@ -3,10 +3,8 @@ const plus = document.querySelector("#plus");
 const menu = document.querySelector("#menu");
 const wall = document.querySelector("#wall");
 const peel = document.querySelector("#peel");
-const hint = document.querySelector("#hint");
 const cells = [...wall.querySelectorAll(".cell:not(.tape)")];
 const cases = [...wall.querySelectorAll(".case")];
-const order = cells.slice();
 
 function setMenu(open) {
   menu.hidden = !open;
@@ -101,7 +99,7 @@ cells.forEach((el) => {
   });
 });
 
-bindDrag(peel, { onMove: () => { hint.textContent = "¿Viste? Se mueve."; } });
+bindDrag(peel);
 
 // La cinta se frota para los dos lados y sigue un poco al soltar.
 const tape = document.querySelector("#tape");
@@ -127,29 +125,6 @@ tape.addEventListener("pointermove", (event) => {
   tapeRow.style.translate = tapeX + "px 0";
   requestAnimationFrame(tapeLoop);
 })();
-
-// Ordenar y barajar con FLIP: se mide, se reordena el DOM y se anima el salto.
-function flip(next, easing) {
-  const first = new Map(cells.map((el) => [el, el.getBoundingClientRect()]));
-  next.forEach((el) => wall.insertBefore(el, tape));
-  cells.forEach((el) => { el.dataset.dx = "0"; el.dataset.dy = "0"; el.style.translate = ""; el.style.transition = ""; });
-  if (reduce) return;
-  cells.forEach((el) => {
-    const a = first.get(el);
-    const b = el.getBoundingClientRect();
-    el.animate(
-      [{ transform: `translate(${a.left - b.left}px, ${a.top - b.top}px) rotate(${Math.random() * 16 - 8}deg)` }, { transform: "none" }],
-      { duration: 700, easing },
-    );
-  });
-}
-document.querySelector("#tidy").addEventListener("click", () => {
-  flip(order, "cubic-bezier(.3,1.35,.4,1)");
-  peel.dataset.dx = "0"; peel.dataset.dy = "0"; peel.style.translate = "";
-});
-document.querySelector("#shuffle").addEventListener("click", () => {
-  flip(cells.slice().sort(() => Math.random() - 0.5), "cubic-bezier(.2,.8,.2,1)");
-});
 
 // Capa de pieza.
 const caseEl = document.querySelector("#case");
@@ -226,14 +201,3 @@ document.addEventListener("keydown", (event) => {
 const say = document.querySelector("#say");
 say.innerHTML = [...say.textContent].map((ch) => `<span aria-hidden="true">${ch === " " ? "&nbsp;" : ch}</span>`).join("");
 say.querySelectorAll("span").forEach((span) => bindDrag(span));
-
-const copyBtn = document.querySelector("#copy");
-copyBtn.addEventListener("click", async () => {
-  const text = document.querySelector("#email").textContent.trim();
-  try {
-    await navigator.clipboard.writeText(text);
-    copyBtn.textContent = "Copiado";
-  } catch {
-    copyBtn.textContent = text;
-  }
-});

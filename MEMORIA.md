@@ -145,6 +145,7 @@ Colores que el CSS del sitio declara, además de la paleta del PDF: crema `#FFFA
 | `webs/shared/ca27.css`, `ca27.js` | Sistema compartido de las cuatro versiones |
 | `webs/shared/media/` | Assets del sitio publicado (WebP). No son exports de Figma |
 | `webs/shared/piezas/` | Recortes de las láminas 5, 6, 7 y 10 |
+| `webs/shared/oradores/` | Fotos de los ocho oradores con nombre, exportadas del PSD |
 
 Comps útiles dentro del PSD de feed: `ca27_institucional`, `ca27_ORADORES`, `ca27_invitados`, `ca27_orador` (Chris Mendez), `ca27_obelisco`, `ca27_orador+obelisco` y su variante `(b)`.
 
@@ -211,12 +212,31 @@ La lámina 8 y los PNG de feed no se recortaron: llevan la fecha 27–29 y «pri
 
 ### Las cuatro versiones
 
-| Carpeta | Referencia | Estructura | Gesto |
-|---|---|---|---|
-| `webs/landonorris/` | [landonorris.com](https://landonorris.com/) | Capítulos a pantalla: hero lámina 5, manifiesto, piezas, sala y ciudad, lineup, preguntas, «gracias» | Nav que cambia de color por campo, manifiesto que se ilumina palabra por palabra, tira horizontal fijada con las piezas, puertas del hero que siguen al mouse |
-| `webs/lajoya/` | [lajoya-foods.com](https://lajoya-foods.com/) | Hero naranja con pattern, bloques alternados, preguntas | Firma que entra en dos mitades, cada apellido repetido como fila, menú con palabras en máscara, panel Reservar |
-| `webs/gutfeeling/` | [gutfeeling.agency](https://gutfeeling.agency/) | Una frase, muro azul, manifiesto, lineup, preguntas, contacto | «haciendo.» se despega, muro de afiches, puertas y apellidos para arrastrar (mantener apretado en mobile), barajar y ordenar con FLIP, reel que crece desde el disco |
-| `webs/meety/` | [meety-wcopilot.webflow.io](https://meety-wcopilot.webflow.io/) | Banner, encuentro, tres días, qué vas a vivir, frases, oradores, lugar, piezas, pie de dos pisos | Cuenta regresiva, carrusel de piezas en arco, frases con flechas y puntos, filtros de piezas, sección activa en la nav |
+| Carpeta | Estructura | Gesto |
+|---|---|---|
+| `webs/inmersiva/` | Capítulos a pantalla: hero lámina 5, manifiesto en cuatro láminas, piezas, sala y ciudad, lineup, preguntas, «gracias» | Láminas que se apilan con la de abajo atenuada, tira horizontal fijada con las piezas (carrusel en mobile), lineup con escenario: al pasar por una puerta el orador aparece grande con nombre completo |
+| `webs/editorial/` | Hero naranja con pattern y bloque «Casa Abierta 2027», bloques alternados, preguntas | Firma que entra en dos mitades, cada apellido repetido como fila, menú con palabras en máscara, panel Reservar |
+| `webs/manifiesto/` | Una frase, muro azul, manifiesto, lineup, preguntas, contacto | «haciendo.» se despega, muro de afiches, puertas y apellidos que se arrastran, reel que crece desde el disco |
+| `webs/conferencia/` | Banner, encuentro, tres días, qué vas a vivir, frases, oradores, lugar, pie de dos pisos | Cuenta regresiva, carrusel de piezas en arco, frases con flechas y puntos, sección activa en la nav |
+
+Las páginas no le indican acciones al usuario («bajá», «arrastrá», «copiar», «barajar»): los gestos están, sin explicarlos. Las páginas no nombran sitios de referencia.
+
+### Oradores con nombre
+
+Los nombres de las fotos salen del PSD de feed, comp `ca27_invitados`: cada puerta tiene su foto recortada encima y el nombre en una capa de texto debajo, en la misma columna. Chris Mendez sale de la foto `mendez-1` de su pieza. Exportadas en `webs/shared/oradores/<apellido>.webp` (640×800, gris).
+
+| Archivo | Nombre | En `shared/media/` |
+|---|---|---|
+| `luna.webp` | Cash Luna | `speaker-01` |
+| `dooley.webp` | Phil Dooley | `speaker-02` |
+| `mendez.webp` | Chris Mendez (Pr. Hillsong LATAM) | `speaker-03` |
+| `lopez.webp` | Sam Lopez | `speaker-05` |
+| `clarke.webp` | Gary Clarke | `speaker-06` |
+| `mejias.webp` | Juan Mejías | `speaker-07` |
+| `rui-boto.webp` | Mario Rui Boto | `speaker-08` |
+| `douglas.webp` | Tim Douglas | no está en el sitio publicado |
+
+`speaker-04`, `09`, `10` y `11` no tienen nombre en ningún archivo. No asignárselo. No hay frases de los oradores en el material: no inventarlas.
 
 ## Reglas para la próxima pieza
 
@@ -226,5 +246,5 @@ La lámina 8 y los PNG de feed no se recortaron: llevan la fecha 27–29 y «pri
 4. Grano en los fondos. Tinta `#0D1517`. Crema `#FFFAF6`.
 5. El arco es la puerta. Buenos Aires es el Obelisco. El logo de Hillsong Leadership Network no se omite.
 6. Se puede cortar un titular de clima. No se corta la fecha, la URL ni un apellido.
-7. No hay fotos sueltas de oradores licenciadas en el repo, salvo las que ya están dentro de los renders y los PNG. No generar caras.
-8. No copiar marcas, slogans ni fotos del moodboard ni de los cuatro sitios de referencia.
+7. Las únicas fotos de oradores con nombre son las de `webs/shared/oradores/`. No generar caras ni nombrar fotos sin fuente.
+8. No copiar marcas, slogans ni fotos del moodboard. No nombrar sitios de referencia en las páginas.

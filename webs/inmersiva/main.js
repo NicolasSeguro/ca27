@@ -1,4 +1,4 @@
-const { reduce, countdown } = window.CA27;
+const { reduce } = window.CA27;
 const nav = document.querySelector("#nav");
 const bar = document.querySelector("#bar");
 const menu = document.querySelector("#menu");
@@ -7,15 +7,7 @@ const menuImg = document.querySelector("#menuImg");
 const pin = document.querySelector("#piezas");
 const track = document.querySelector("#track");
 const pinBar = document.querySelector("#pinBar");
-const floaters = document.querySelector("#floaters");
-
-countdown(({ days }) => { document.querySelector("#days").textContent = days; });
-
-// Manifiesto: cada párrafo se parte en palabras y se ilumina mientras cruza la pantalla.
-const paragraphs = [...document.querySelectorAll("#readText p")].map((p) => {
-  p.innerHTML = p.textContent.trim().split(/\s+/).map((w) => `<span class="w">${w}</span>`).join(" ");
-  return { el: p, words: [...p.querySelectorAll(".w")] };
-});
+const sheets = [...document.querySelectorAll(".sheet")];
 
 // Tira de piezas: fijada solo si hay lugar y movimiento; si no, carrusel nativo.
 const pinQuery = window.matchMedia("(min-width: 861px) and (min-height: 560px)");
@@ -33,25 +25,34 @@ function layoutPin() {
   pin.style.height = window.innerHeight + travel + "px";
 }
 
+// La nav toma el color del campo que tiene detrás, mirando el punto debajo de ella.
+function paintNav() {
+  if (!menu.hidden) return;
+  const hit = document.elementsFromPoint(window.innerWidth / 2, 36).find((el) => el.closest("[data-nav]") && !el.closest("#nav"));
+  const zone = hit && hit.closest("[data-nav]");
+  if (zone) nav.dataset.theme = zone.dataset.nav;
+}
+
 function onScroll() {
-  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const vh = window.innerHeight;
+  const max = document.documentElement.scrollHeight - vh;
   bar.style.transform = "scaleX(" + (max > 0 ? window.scrollY / max : 0) + ")";
+  paintNav();
   if (reduce) return;
 
-  const vh = window.innerHeight;
-  paragraphs.forEach(({ el, words }) => {
-    const r = el.getBoundingClientRect();
-    // 0 cuando el párrafo asoma abajo, 1 cuando su base llega a 40% de la pantalla.
-    const p = Math.min(1, Math.max(0, (vh * 0.9 - r.top) / (r.height + vh * 0.5)));
-    const lit = Math.round(p * words.length);
-    words.forEach((w, i) => w.classList.toggle("on", i < lit));
+  // Cada lámina se achica y se oscurece mientras la siguiente le pasa por encima.
+  sheets.forEach((sheet, i) => {
+    const next = sheets[i + 1];
+    if (!next) return;
+    const p = Math.min(1, Math.max(0, 1 - next.getBoundingClientRect().top / vh));
+    sheet.querySelector(".sheet-in").style.transform = "scale(" + (1 - p * 0.08) + ") translateY(" + (-p * 4) + "vh)";
+    sheet.style.setProperty("--dim", (p * 0.55).toFixed(3));
   });
 
   if (travel > 0) {
     const passed = Math.min(Math.max(-pin.getBoundingClientRect().top, 0), travel);
-    const p = passed / travel;
     track.style.transform = "translate3d(" + (-passed) + "px,0,0)";
-    pinBar.style.transform = "scaleX(" + p + ")";
+    pinBar.style.transform = "scaleX(" + passed / travel + ")";
   }
 }
 
@@ -66,27 +67,37 @@ addEventListener("resize", relayout);
 addEventListener("load", relayout);
 pinQuery.addEventListener("change", relayout);
 track.querySelectorAll("img").forEach((img) => img.addEventListener("load", relayout, { once: true }));
-if (reduce) paragraphs.forEach(({ words }) => words.forEach((w) => w.classList.add("on")));
 relayout();
 
-// La nav toma el color del campo que tiene detrás.
-const watch = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => { if (entry.isIntersecting && menu.hidden) nav.dataset.theme = entry.target.dataset.nav; });
-}, { rootMargin: "0px 0px -92% 0px" });
-document.querySelectorAll("[data-nav]").forEach((node) => watch.observe(node));
-
-// Puertas del hero: se corren apenas con el mouse.
-if (!reduce && floaters) {
-  addEventListener("mousemove", (event) => {
-    const dx = (event.clientX / innerWidth - 0.5) * 2;
-    const dy = (event.clientY / innerHeight - 0.5) * 2;
-    floaters.querySelectorAll("img").forEach((img, i) => {
-      const depth = 6 + (i % 4) * 5;
-      img.style.setProperty("--px", (-dx * depth).toFixed(1) + "px");
-      img.style.setProperty("--py", (-dy * depth).toFixed(1) + "px");
-    });
-  });
+// Lineup: el orador elegido sube al escenario con su nombre completo.
+const stage = document.querySelector("#stage");
+const picks = [...document.querySelectorAll(".pick")];
+let current = null;
+let swapTimer = 0;
+function pick(btn) {
+  if (btn === current) return;
+  current = btn;
+  picks.forEach((b) => b.classList.toggle("is-on", b === btn));
+  const apply = () => {
+    stage.dataset.c = btn.dataset.c;
+    document.querySelector("#stageImg").src = btn.dataset.img;
+    document.querySelector("#stageImg").alt = btn.dataset.first + " " + btn.dataset.last;
+    document.querySelector("#stageFirst").textContent = btn.dataset.first;
+    document.querySelector("#stageLast").textContent = btn.dataset.last;
+    document.querySelector("#stageRole").textContent = btn.dataset.role;
+    stage.classList.remove("is-swap");
+  };
+  window.clearTimeout(swapTimer);
+  if (reduce) { apply(); return; }
+  stage.classList.add("is-swap");
+  swapTimer = window.setTimeout(apply, 220);
 }
+picks.forEach((btn) => {
+  btn.addEventListener("mouseenter", () => pick(btn));
+  btn.addEventListener("focus", () => pick(btn));
+  btn.addEventListener("click", () => pick(btn));
+});
+pick(picks[0]);
 
 let themeBeforeMenu = nav.dataset.theme;
 function setMenu(open) {

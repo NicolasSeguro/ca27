@@ -93,14 +93,3 @@ navLinks.forEach((a) => {
   const target = document.querySelector(a.getAttribute("href"));
   if (target) io.observe(target);
 });
-
-// Filtros de piezas.
-document.querySelectorAll("[data-filter]").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll("[data-filter]").forEach((b) => b.classList.toggle("is-on", b === button));
-    const kind = button.dataset.filter;
-    document.querySelectorAll(".mosaic [data-kind]").forEach((fig) => {
-      fig.classList.toggle("is-off", kind !== "todas" && fig.dataset.kind !== kind);
-    });
-  });
-});
